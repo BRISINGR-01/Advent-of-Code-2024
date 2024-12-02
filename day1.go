@@ -3,22 +3,15 @@ package main
 import (
 	"math"
 	"sort"
-	"strconv"
-	"strings"
 )
 
 func Day1Pt1() int {
-
 	left := []int{}
 	right := []int{}
 
-	for _, row := range ReadInput() {
-		numbers := strings.Split(row, "   ")
-		leftInt, _ := strconv.Atoi(numbers[0])
-		rightInt, _ := strconv.Atoi(numbers[1])
-
-		left = append(left, leftInt)
-		right = append(right, rightInt)
+	for _, row := range ReadInputNumbers() {
+		left = append(left, row[0])
+		right = append(right, row[1])
 	}
 
 	sort.Slice(left, func(i, j int) bool {
@@ -30,8 +23,8 @@ func Day1Pt1() int {
 
 	result := 0
 
-	for i := 0; i < len(left); i++ {
-		result += int(math.Abs(float64(left[i] - right[i])))
+	for i, leftVal := range left {
+		result += int(math.Abs(float64(leftVal - right[i])))
 	}
 
 	return result
@@ -41,13 +34,9 @@ func Day1Pt2() int {
 	left := []int{}
 	frequency := map[int]int{}
 
-	for _, row := range ReadInput() {
-		numbers := strings.Split(row, "   ")
-		leftInt, _ := strconv.Atoi(numbers[0])
-		rightInt, _ := strconv.Atoi(numbers[1])
-
-		left = append(left, leftInt)
-		frequency[rightInt] += 1
+	for _, row := range ReadInputNumbers() {
+		left = append(left, row[0])
+		frequency[row[1]] += 1
 	}
 
 	result := 0
