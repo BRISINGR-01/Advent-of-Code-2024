@@ -1,6 +1,5 @@
 package main
 
 func main() {
-
-	println("Result: ", Day2Pt2())
+	println("Result: ", Day3Pt2())
 }

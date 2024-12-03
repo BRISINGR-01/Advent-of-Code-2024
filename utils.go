@@ -7,13 +7,17 @@ import (
 	"strings"
 )
 
-func ReadInput() []string {
+func ReadInput() string {
 	input, err := os.ReadFile("input")
 	if err != nil {
 		panic(err)
 	}
 
-	res := strings.Split(string(input), "\n")
+	return string(input)
+}
+
+func ReadInputLines() []string {
+	res := strings.Split(ReadInput(), "\n")
 
 	// remove empty last line
 	if res[len(res)-1] == "" {
@@ -24,7 +28,7 @@ func ReadInput() []string {
 }
 
 func ReadInputStrings() [][]string {
-	input := ReadInput()
+	input := ReadInputLines()
 	result := [][]string{}
 
 	for _, row := range input {
@@ -35,7 +39,7 @@ func ReadInputStrings() [][]string {
 }
 
 func ReadInputNumbers() [][]int {
-	input := ReadInput()
+	input := ReadInputLines()
 	result := [][]int{}
 
 	for _, row := range input {
