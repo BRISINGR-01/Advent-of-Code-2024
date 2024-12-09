@@ -132,9 +132,3 @@ func Day9Pt2() int {
 
 	return result
 }
-
-// 6353923330830 is too high
-// 6353658451014
-// 164063653075 wrong
-// 90233883775 is too low
-// 5598524210 is too low
