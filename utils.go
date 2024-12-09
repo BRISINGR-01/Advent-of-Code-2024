@@ -38,12 +38,23 @@ func ReadInputStrings() [][]string {
 	return result
 }
 
+func ReadInputRunes() [][]rune {
+	input := ReadInputLines()
+	result := [][]rune{}
+
+	for _, row := range input {
+		result = append(result, []rune(row))
+	}
+
+	return result
+}
+
 func ReadInputNumbers() [][]int {
 	input := ReadInputLines()
 	result := [][]int{}
 
 	for _, row := range input {
-		raw_numbers := regexp.MustCompile(`\s+`).Split(row, -1)
+		raw_numbers := regexp.MustCompile(`(\d+)`).FindAllString(row, -1)
 		numbers := []int{}
 
 		for _, raw_number := range raw_numbers {
