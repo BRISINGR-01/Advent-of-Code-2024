@@ -67,3 +67,18 @@ func ReadInputNumbers() [][]int {
 
 	return result
 }
+
+func ReadInputGridNumbers() [][]int {
+	input := ReadInputRunes()
+	result := [][]int{}
+
+	for row_i, row := range input {
+		result = append(result, []int{})
+
+		for _, char := range row {
+			result[row_i] = append(result[row_i], int(char-'0'))
+		}
+	}
+
+	return result
+}
