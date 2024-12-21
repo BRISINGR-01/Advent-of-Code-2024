@@ -129,7 +129,7 @@ func CountTokens2(game Game) int {
 			sum := cA*game.A.X + cB*game.B.X
 
 			if sum == game.prizeX && cA*game.A.Y+cB*game.B.Y == game.prizeY {
-				tokens = min(tokens, cA*3+cB)
+				// tokens := min(tokens, cA*3+cB)
 				println(cA, cB)
 				return cA*3 + cB
 			}

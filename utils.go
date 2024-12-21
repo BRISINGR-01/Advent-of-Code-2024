@@ -7,6 +7,22 @@ import (
 	"strings"
 )
 
+type Pos struct {
+	x int
+	y int
+}
+
+func PrintGrid(grid [][]rune) {
+	for _, row := range grid {
+		for _, item := range row {
+			print(string(item))
+		}
+		println()
+	}
+
+	println()
+}
+
 func ReadInput() string {
 	input, err := os.ReadFile("input")
 	if err != nil {
