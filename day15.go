@@ -145,7 +145,6 @@ func Day15Pt2() int {
 			grid[robot.y][robot.x] = '.'
 			robot = nextPos
 			grid[robot.y][robot.x] = '@'
-			// println(string(movement))
 			continue
 		}
 
@@ -157,7 +156,6 @@ func Day15Pt2() int {
 		grid[robot.y][robot.x] = '.'
 		robot = nextPos
 		grid[robot.y][robot.x] = '@'
-		// println(string(movement))
 	}
 
 	result := 0
