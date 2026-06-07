@@ -19,7 +19,7 @@ func Day14Pt1() int {
 
 	robots := GetRobots()
 
-	for i := 0; i < 100; i++ {
+	for range 100 {
 		for i := range robots {
 			MoveRobot(&robots[i], COLS, ROWS)
 		}

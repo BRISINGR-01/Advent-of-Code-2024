@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	result := Day23Pt1()
+	result := Day17Pt2()
 	println("Result: ", result)
 
 	cmd := exec.Command("wl-copy", strconv.Itoa(result))
